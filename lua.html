@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PW3 | Lua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="h-screen">
+      <!--Navbar-->
+      <nav class="bg-neutral-800 text-white p-4 shadow-md space-x-4 flex">
+        <a href="index.html">Home</a>
+        <div class="relative">
+          <div
+            id="dropdown-content"
+            class="hidden bg-neutral-800 shadow-md rounded-b-md p-2 z-20 absolute top-10 flex flex-col w-32"
+          >
+            <a href="lua.html" class="hover:bg-neutral-600"> Lua </a>
+            <a href="index.html" class="hover:bg-neutral-600"> Lorem </a>
+          </div>
+          <button id="navbar-dropdown">Mais Páginas &darr;</button>
+        </div>
+      </nav>
+      <!--Div com o que parece ser grid, mas eu vou usar flex por que funciona melhor-->
+      <div class="flex flex-col md:flex-row py-6 pl-6 pr-6 md:pr-0 md:space-x-6">
+        <!--se resposividade estiver ao crontrário, trocar posição de col e row acima-->
+        <div class="w-full">
+          <img
+            src="img/slide3.jpg"
+            alt=""
+            class="object-cover object-center h-96 w-full"
+          />
+          <h1 class="font-bold text-2xl">Essa foto da lua é muito bonita</h1>
+          <p class="text-lg text-justify mt-2">
+            É uma foto de muito alta qualidade, onde é possível ver as crateras
+            causadas por meteoros que estavam em direção à terra, e que acabaram
+            acertando a lua ao invés de nós.
+          </p>
+          <p class="mt-4">
+            Fonte das informações:
+            <a
+              target="_blank"
+              class="text-blue-500 hover:underline"
+              href="https://www.uol.com.br/tilt/noticias/redacao/2021/11/21/15-fatos-incriveis-sobre-a-lua-que-voce-talvez-nao-saiba.htm"
+              >15 fatos incríveis sobre a Lua que você talvez não saiba,
+              UOL.com.br</a
+            >
+          </p>
+        </div>
+        <div class="w-full">
+          <h1 class="font-bold text-2xl">Outros fatos interessantes:</h1>
+          <div class="flex flex-col pl-6 pr-6 md:pr-12 mt-4 space-y-4">
+            <!-- Dropdown de distancia -->
+            <div
+              class="flex flex-col border border-neutral-500 rounded-md w-full"
+            >
+              <button
+                id="first-fact-button"
+                class="bg-neutral-100 p-2 pointer rounded-md"
+              >
+                <h1 class="text-left font-semibold text-xl">Distância:</h1>
+              </button>
+              <div
+                id="first-fact"
+                class="p-2 hidden border-t border-neutral-500"
+              >
+                <p class="text-justify">
+                  A Lua está a 30 Terras de distância da Terra!
+                </p>
+              </div>
+            </div>
+            <!-- Efeito da lua no mar -->
+            <div
+              class="flex flex-col border border-neutral-500 rounded-md w-full"
+            >
+              <button
+                id="second-fact-button"
+                class="bg-neutral-100 p-2 pointer rounded-md"
+              >
+                <h1 class="text-left font-semibold text-xl">
+                  Velocidade de Rotação:
+                </h1>
+              </button>
+              <div
+                id="second-fact"
+                class="p-2 hidden border-t border-neutral-500"
+              >
+                <p class="text-justify">
+                  Todos escutamos antes que a Lua afeta as marés da Terra, mas
+                  você sabia que outro efeito colateral é que ela está também
+                  diminuindo a velociade de rotação da Terra.
+                </p>
+              </div>
+            </div>
+            <!-- Proporção de tamanho da lua -->
+            <div
+              class="flex flex-col border border-neutral-500 rounded-md w-full"
+            >
+              <button
+                id="third-fact-button"
+                class="bg-neutral-100 p-2 pointer rounded-md"
+              >
+                <h1 class="text-left font-semibold text-xl">Proporções:</h1>
+              </button>
+              <div
+                id="third-fact"
+                class="p-2 hidden border-t border-neutral-500"
+              >
+                <p class="text-justify">
+                  O tamanho da Lua e da Terra podem ser exeplificados de forma
+                  simples: Digamos que a Terra é uma bola de basquete. Se
+                  colocarmos ao lado dela uma bola de tênis, teremos o tamanho
+                  aproximado da lua em proporção ao planeta Terra.
+                </p>
+              </div>
+            </div>
+            <!-- idade da lua -->
+            <div
+              class="flex flex-col border border-neutral-500 rounded-md w-full"
+            >
+              <button
+                id="fourth-fact-button"
+                class="bg-neutral-100 p-2 pointer rounded-md"
+              >
+                <h1 class="text-left font-semibold text-xl">Idade da Lua:</h1>
+              </button>
+              <div
+                id="fourth-fact"
+                class="p-2 hidden border-t border-neutral-500"
+              >
+                <p class="text-justify">
+                  A Lua foi formada há aproximadamente 4,5 bilhões de anos,
+                  quando um objeto do tamanho aproximado de marte colodiu com a
+                  terra. Os destroços desse objeto eventualmente se juntaram e
+                  formaram o que vemos hoje nos céus à noite.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex flex-col border border-neutral-500 rounded-md w-full"
+            >
+              <button
+                id="fith-fact-button"
+                class="bg-neutral-100 p-2 pointer rounded-md"
+              >
+                <h1 class="text-left font-semibold text-xl">Os "Luamotos":</h1>
+              </button>
+              <div
+                id="fith-fact"
+                class="p-2 hidden border-t border-neutral-500"
+              >
+                <p class="text-justify">
+                  A Lua, de forma semelhante à Terra, tem também espécies de
+                  terremotos, causados por impactos de meteoritos e moviemtnso
+                  terminais causados pela expansão da crosta frígida quando
+                  iluminada pela luz solar pela manhã na Lua.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex flex-col border border-neutral-500 rounded-md w-full"
+            >
+              <button
+                id="sixth-fact-button"
+                class="bg-neutral-100 p-2 pointer rounded-md"
+              >
+                <h1 class="text-left font-semibold text-xl">
+                  A Lua não tem dono:
+                </h1>
+              </button>
+              <div
+                id="sixth-fact"
+                class="p-2 hidden border-t border-neutral-500"
+              >
+                <p class="text-justify">
+                  Apesar de ser um pensamento lógico imaginar que os Estados
+                  Unidos possam ser os donos da lua, já que chegaram lá primeiro
+                  e fincaram sua bandedira lá, a Lua na verdade não pode ser de
+                  ninguém. Em 1967 foi criado um tratado que proibe que qualquer
+                  nação seja dona de planetas, estrelas ou quaisquer outros
+                  objetos espaciais. E este tratado segura mérito por ter sido
+                  criado pelo Instituto de Internacional para Leis Espaciais
+                  (IILE). A coisa é braba.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  const navbarDropdownButton = document.getElementById("navbar-dropdown");
+  const navbarDropdown = document.getElementById("dropdown-content");
+
+  const fisrtFactDropdownButton = document.getElementById("first-fact-button");
+  const fisrtFactDropdown = document.getElementById("first-fact");
+
+  const secondFactDropdownButton =
+    document.getElementById("second-fact-button");
+  const secondFactDropdown = document.getElementById("second-fact");
+
+  const thirdFactDropdownButton = document.getElementById("third-fact-button");
+  const thirdFactDropdown = document.getElementById("third-fact");
+
+  const fourthFactDropdownButton =
+    document.getElementById("fourth-fact-button");
+  const fourthFactDropdown = document.getElementById("fourth-fact");
+
+  const fithFactDropdownButton = document.getElementById("fith-fact-button");
+  const fithFactDropdown = document.getElementById("fith-fact");
+
+  const sixthFactDropdownButton = document.getElementById("sixth-fact-button");
+  const sixthFactDropdown = document.getElementById("sixth-fact");
+
+  
+
+  navbarDropdownButton.addEventListener("click", () => {
+    navbarDropdown.classList.toggle("hidden");
+  });
+
+  fisrtFactDropdownButton.addEventListener("click", () => {
+    fisrtFactDropdown.classList.toggle("hidden");
+  });
+
+  secondFactDropdownButton.addEventListener("click", () => {
+    secondFactDropdown.classList.toggle("hidden");
+  });
+
+  thirdFactDropdownButton.addEventListener("click", () => {
+    thirdFactDropdown.classList.toggle("hidden");
+  });
+
+  fourthFactDropdownButton.addEventListener("click", () => {
+    fourthFactDropdown.classList.toggle("hidden");
+  });
+
+  fithFactDropdownButton.addEventListener("click", () => {
+    fithFactDropdown.classList.toggle("hidden");
+  });
+
+  sixthFactDropdownButton.addEventListener("click", () => {
+    sixthFactDropdown.classList.toggle("hidden");
+  });
+</script>

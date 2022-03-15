@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PW3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="h-screen">
+      <!--Navbar-->
+      <nav class="bg-neutral-800 text-white p-4 shadow-md space-x-4 flex">
+        <a href="index.html">Home</a>
+        <div class="relative">
+          <div
+            id="dropdown-content"
+            class="hidden bg-neutral-800 shadow-md rounded-b-md p-2 z-20 absolute top-10 flex flex-col w-32"
+          >
+            <a href="lua.html" class="hover:bg-neutral-600"> Lua </a>
+            <a href="index.html" class="hover:bg-neutral-600"> Lorem </a>
+          </div>
+          <button id="navbar-dropdown">Mais Páginas &darr;</button>
+        </div>
+      </nav>
+      <!--Carrousel-->
+      <div
+        class="h-96 bg-neutral-600 grid grid-cols-3 text-neutral-100 text-2xl relative"
+      >
+        <button id="previous-slide">&lt; Previous</button>
+        <div
+          id="slide-container"
+          class="text-5xl text-neutral-800 flex justify-center items-center text-center"
+        >
+          <img
+            id="slide-image"
+            src="img/slide1.jpg"
+            alt=""
+            class="object-cover object-center h-96"
+          />
+          <!-- <h1 class="absolute">First Slide</h1> -->
+        </div>
+        <button id="next-slide">Next &gt;</button>
+      </div>
+      <!--As 3 coisa lá em baixo-->
+      <div
+        class="w-full flex flex-col space-y-12 justify-center lg:space-x-12 lg:justify-between lg:space-y-0 lg:flex-row p-12"
+      >
+        <div>
+          <div
+            class="flex items-center justify-center bg-neutral-600 w-full h-64 p-4 rounded-md lg:w-78 xl2-96"
+          >
+            <img
+              src="img/slide1.jpg"
+              alt=""
+              class="object-cover object-center h-full w-full"
+            />
+          </div>
+          <h1 class="text-center font-bold text-2xl">Olha que arvore bonita</h1>
+          <h2 class="text-center text-neutral-500">
+            subtitulo da arvore bonita
+          </h2>
+        </div>
+        <div>
+          <div
+            class="flex items-center justify-center bg-neutral-600 w-full h-64 p-4 rounded-md lg:w-78 xl2-96"
+          >
+            <img
+              src="img/slide2.jpg"
+              alt=""
+              class="object-cover object-center h-full w-full"
+            />
+          </div>
+          <h1 class="text-center font-bold text-2xl">Olha que campo bonito</h1>
+          <h2 class="text-center text-neutral-500">
+            bem verde e ensolarado né?
+          </h2>
+        </div>
+        <a href="lua.html">
+          <div
+            class="flex items-center justify-center bg-neutral-600 w-full h-64 p-4 rounded-md lg:w-78 xl2-96"
+          >
+            <img
+              src="img/slide3.jpg"
+              alt=""
+              class="object-cover object-center h-full w-full"
+            />
+          </div>
+          <h1 class="text-center font-bold text-2xl">Olha que lua bonita</h1>
+          <h2 class="text-center text-neutral-500">ninguem olha pro céu :(</h2>
+        </a>
+      </div>
+    </div>
+  <script>
+    const previousSlideButton = document.getElementById("previous-slide");
+    const nextSlideButton = document.getElementById("next-slide");
+    const navbarDropdownButton = document.getElementById("navbar-dropdown");
+    const navbarDropdown = document.getElementById("dropdown-content");
+    const slideContainer = document.getElementById("slide-container");
+    const slideImage = document.getElementById("slide-image");
+
+    console.log(slideImage);
+
+    const slideImagePaths = [
+      "img/slide1.jpg",
+      "img/slide2.jpg",
+      "img/slide3.jpg",
+      "img/moon.jpg",
+      "img/batata_frita.jpg"
+    ];
+
+    let currentSlideIndex = 0;
+
+    nextSlideButton.addEventListener("click", handleNext);
+    previousSlideButton.addEventListener("click", handlePrevious);
+    navbarDropdownButton.addEventListener("click", () => {
+      navbarDropdown.classList.toggle("hidden");
+    });
+
+    function handleNext() {
+      if (currentSlideIndex < slideImagePaths.length - 1) {
+        currentSlideIndex++;
+        slideImage.src = slideImagePaths[currentSlideIndex];
+      } else {
+        currentSlideIndex = 0;
+        slideImage.src = slideImagePaths[currentSlideIndex];
+      }
+    }
+    function handlePrevious() {
+      if (currentSlideIndex > 0) {
+        currentSlideIndex--;
+        slideImage.src = slideImagePaths[currentSlideIndex];
+      } else {
+        currentSlideIndex = slideImagePaths.length - 1;
+        slideImage.src = slideImagePaths[currentSlideIndex];
+      }
+    }
+  </script>
+  </body>
+</html>
